@@ -47,12 +47,12 @@
         }
 
         .header-content h1 {
-            font-size: 2rem;
+            font-size: 1.5rem; /* Reduzido para telas menores */
             font-weight: 700;
         }
 
         .header-content p {
-            font-size: 1rem;
+            font-size: 0.9rem; /* Reduzido para telas menores */
             opacity: 0.9;
         }
 
@@ -95,19 +95,20 @@
 
         .hero-content {
             background: rgba(0, 0, 0, 0.6);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
+            max-width: 90%; /* Ajustado para telas menores */
         }
 
         .hero-content p {
-            font-size: 1.5rem;
+            font-size: 1.2rem; /* Reduzido para telas menores */
             margin-bottom: 1.5rem;
         }
 
         .cta-button {
             background: #ff6f61;
             color: #fff;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
@@ -121,72 +122,80 @@
 
         /* Destaques */
         #destaques {
-            padding: 4rem 1rem;
+            padding: 2rem 1rem;
             background: #fff;
             text-align: center;
         }
 
         #destaques h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2rem; /* Reduzido para telas menores */
+            margin-bottom: 1.5rem;
             color: #2575fc;
         }
 
         .destaques-carousel {
-            max-width: 1200px;
-            margin: 0 auto;
+            display: flex;
+            flex-direction: column; /* Coluna única em telas menores */
+            gap: 1rem;
         }
 
         .destaque-item {
             background: #fff;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 1rem;
             transition: transform 0.3s ease;
         }
 
         .destaque-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
 
         .destaque-item i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #2575fc;
             margin-bottom: 1rem;
         }
 
         .destaque-item h3 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
 
         .destaque-item p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             opacity: 0.8;
         }
 
         /* Galeria */
         #galeria {
-            padding: 4rem 1rem;
+            padding: 2rem 1rem;
             background: #f4f4f4;
             text-align: center;
         }
 
         #galeria h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2rem; /* Reduzido para telas menores */
+            margin-bottom: 1.5rem;
             color: #2575fc;
         }
 
         .galeria-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 100%;
+            overflow-x: auto; /* Permite rolagem horizontal */
+            scroll-snap-type: x mandatory;
         }
 
         .project-carousel {
             display: flex;
             gap: 1rem;
+            padding-bottom: 1rem; /* Espaço para a barra de rolagem */
+        }
+
+        .project-item {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            width: 80vw; /* Largura ajustada para telas menores */
         }
 
         .project-item img {
@@ -201,37 +210,36 @@
 
         /* Depoimentos */
         #depoimentos {
-            padding: 4rem 1rem;
+            padding: 2rem 1rem;
             background: #fff;
             text-align: center;
         }
 
         #depoimentos h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2rem; /* Reduzido para telas menores */
+            margin-bottom: 1.5rem;
             color: #2575fc;
         }
 
         .depoimentos-carousel {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 100%;
         }
 
         .depoimento-item {
             background: #fff;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 1rem;
+            margin: 1rem 0;
         }
 
         .depoimento-item p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
         }
 
         .depoimento-item span {
-            font-size: 1rem;
+            font-size: 0.9rem;
             opacity: 0.8;
         }
 
@@ -244,37 +252,34 @@
         }
 
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
+            flex-direction: column; /* Coluna única em telas menores */
+            gap: 1.5rem;
         }
 
         .footer-section {
             flex: 1;
-            min-width: 200px;
         }
 
         .footer-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
         }
 
         .footer-section p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             opacity: 0.9;
         }
 
         .social-links {
             display: flex;
+            justify-content: center;
             gap: 1rem;
         }
 
         .social-links a {
             color: #fff;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             transition: opacity 0.3s ease;
         }
 
@@ -283,12 +288,12 @@
         }
 
         .footer-bottom {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.8;
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
         }
 
         .back-to-top {
+            display: none; /* Ocultar em telas menores */
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -306,42 +311,54 @@
             transform: translateY(-5px);
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
+        /* Ajustes para telas maiores (tablets e desktops) */
+        @media (min-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .header-content p {
+                font-size: 1rem;
+            }
+
             .menu-btn {
-                display: block;
+                display: none; /* Ocultar em telas maiores */
             }
 
             nav {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 1rem;
-                background: #2575fc;
-                padding: 1rem;
-                border-radius: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-
-            nav.active {
                 display: flex;
+                flex-direction: row;
+                background-color: transparent;
+                position: static;
+                width: auto;
             }
 
             .hero-content p {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
 
-            .cta-button {
-                padding: 10px 20px;
+            .destaques-carousel {
+                flex-direction: row;
             }
 
             .destaque-item {
-                margin: 0.5rem;
+                width: calc(33.333% - 1rem);
             }
 
             .project-carousel {
-                flex-direction: column;
+                flex-direction: row;
+            }
+
+            .project-item {
+                width: calc(33.333% - 1rem);
+            }
+
+            .footer-content {
+                flex-direction: row;
+            }
+
+            .back-to-top {
+                display: block; /* Mostrar em telas maiores */
             }
         }
     </style>
