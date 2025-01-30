@@ -69,10 +69,39 @@
             opacity: 0.9;
         }
 
-        /* Container principal */
-        .download-container {
+        /* Navegação por abas */
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background-color: #ff6f61;
+        }
+
+        .tab-btn:hover {
+            background-color: rgba(255, 111, 97, 0.8);
+        }
+
+        /* Conteúdo das abas */
+        .tab-content {
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
@@ -83,12 +112,16 @@
             animation: fadeIn 1.5s ease-in-out;
         }
 
-        .download-container h2 {
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content h2 {
             font-size: 2rem;
             margin-bottom: 1.5rem;
         }
 
-        .download-container p {
+        .tab-content p {
             font-size: 1rem;
             margin-bottom: 2rem;
         }
@@ -124,44 +157,25 @@
             font-size: 1.2rem;
         }
 
-        /* Seção de recursos */
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
+        /* Lista de arquivos para download */
+        .file-list {
+            text-align: left;
+            margin-top: 1.5rem;
         }
 
-        .feature {
+        .file-list a {
+            display: block;
             background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            width: 30%;
-            min-width: 250px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: background 0.3s ease;
         }
 
-        .feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .feature i {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #ff6f61;
-        }
-
-        .feature h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature p {
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .file-list a:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         /* Rodapé */
@@ -196,21 +210,17 @@
 
         /* Responsividade */
         @media (max-width: 768px) {
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .feature {
-                width: 80%;
-            }
-
             header h1 {
                 font-size: 2rem;
             }
 
-            .download-container h2 {
+            .tab-content h2 {
                 font-size: 1.8rem;
+            }
+
+            .tab-btn {
+                font-size: 0.9rem;
+                padding: 8px 16px;
             }
         }
     </style>
@@ -224,37 +234,75 @@
         <p>Sua ferramenta completa para cálculos de engenharia</p>
     </header>
 
-    <!-- Container principal -->
-    <div class="download-container">
-        <h2>Baixe Agora</h2>
+    <!-- Navegação por abas -->
+    <div class="tab-navigation">
+        <button class="tab-btn active" data-tab="download">Baixar</button>
+        <button class="tab-btn" data-tab="updates">Atualizações Antigas</button>
+        <button class="tab-btn" data-tab="spreadsheets">Planilhas Estruturais</button>
+        <button class="tab-btn" data-tab="templates">Modelos de Plantas</button>
+    </div>
+
+    <!-- Conteúdo das abas -->
+    <div class="tab-content active" id="download">
+        <h2>Baixe a Versão Mais Recente</h2>
         <p>Obtenha a última versão do nosso programa SkY para realizar seus cálculos de engenharia com facilidade e precisão.</p>
         <a href="sky.exe" class="download-btn" download="SKY.exe">
             <i class="fas fa-download"></i> Baixar Agora
         </a>
     </div>
 
-    <!-- Seção de recursos -->
-    <section class="features">
-        <div class="feature">
-            <i class="fas fa-calculator"></i>
-            <h3>Cálculos Precisos</h3>
-            <p>Realize cálculos complexos com alta precisão e confiabilidade.</p>
+    <div class="tab-content" id="updates">
+        <h2>Atualizações Antigas</h2>
+        <p>Selecione uma versão anterior para download:</p>
+        <div class="file-list">
+            <a href="sky_v1.0.exe" download>Versão 1.0</a>
+            <a href="sky_v1.1.exe" download>Versão 1.1</a>
+            <a href="sky_v1.2.exe" download>Versão 1.2</a>
         </div>
-        <div class="feature">
-            <i class="fas fa-tachometer-alt"></i>
-            <h3>Rápido e Eficiente</h3>
-            <p>Interface otimizada para resultados rápidos e eficientes.</p>
+    </div>
+
+    <div class="tab-content" id="spreadsheets">
+        <h2>Planilhas de Cálculos Estruturais</h2>
+        <p>Baixe planilhas prontas para cálculos estruturais:</p>
+        <div class="file-list">
+            <a href="planilha_vigas.xlsx" download>Planilha de Cálculo de Vigas</a>
+            <a href="planilha_lajes.xlsx" download>Planilha de Cálculo de Lajes</a>
+            <a href="planilha_pilares.xlsx" download>Planilha de Cálculo de Pilares</a>
         </div>
-        <div class="feature">
-            <i class="fas fa-user-friends"></i>
-            <h3>Fácil de Usar</h3>
-            <p>Design intuitivo para todos os níveis de usuários.</p>
+    </div>
+
+    <div class="tab-content" id="templates">
+        <h2>Modelos de Plantas</h2>
+        <p>Baixe modelos de plantas prontos para uso:</p>
+        <div class="file-list">
+            <a href="planta_residencial.dwg" download>Planta Residencial (DWG)</a>
+            <a href="planta_comercial.dwg" download>Planta Comercial (DWG)</a>
+            <a href="planta_industrial.dwg" download>Planta Industrial (DWG)</a>
         </div>
-    </section>
+    </div>
 
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2023 Calculadora SkY. Desenvolvido com <i class="fas fa-heart"></i> por <a href="#" target="_blank">Sua Empresa</a>.</p>
     </footer>
+
+    <!-- Script para alternar abas -->
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove a classe 'active' de todos os botões e conteúdos
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Adiciona a classe 'active' ao botão clicado e ao conteúdo correspondente
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
