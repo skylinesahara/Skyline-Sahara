@@ -1,130 +1,113 @@
 /* Reset CSS */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
-    /* Define margem, preenchimento e borda como zero para todos os elementos listados, garantindo uma base limpa para estilização */
     margin: 0;
-    /* Remove qualquer preenchimento padrão */
     padding: 0;
-    /* Remove bordas padrão */
     border: 0;
-    /* Define o tamanho da fonte como 100% do tamanho padrão */
     font-size: 100%;
-    /* Herda a fonte do elemento pai */
     font: inherit;
-    /* Alinha os elementos verticalmente com a linha base */
     vertical-align: baseline;
 }
 
 body {
-    /* Define a fonte do corpo do documento como Roboto, com uma alternativa sans-serif */
     font-family: 'Roboto', sans-serif;
-    /* Ajusta o espaçamento entre linhas para 1.6 vezes o tamanho da fonte */
     line-height: 1.6;
-    /* Define a cor do texto como preta */
     color: #000000;
-    /* Define a cor de fundo como um cinza claro */
     background-color: #f4f4f4;
-    /* Adiciona uma imagem de fundo do caminho especificado */
-    background-image: url('C:/UsersNHUME/Documents/GitHub/Skyline-Sahara/imagens/fundo.png');
-    /* Ajusta o tamanho da imagem de fundo para cobrir toda a área do corpo */
+    background-image: url('C:/Users/NHUME/Documents/GitHub/Skyline-Sahara/imagens/fundo.png');
     background-size: cover;
-    /* Centraliza a imagem de fundo */
     background-position: center;
-    /* Impede que a imagem de fundo se repita */
     background-repeat: no-repeat;
+    position: relative; /* Adicionado para o pseudo-elemento */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit; /* Herda a imagem de fundo do body */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px); /* Ajuste o valor para o desfoque desejado */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo */
+    opacity: 1; /* Ajuste a opacidade para controlar a intensidade do desfoque */
+}
+
+/* Layout básico usando Flexbox */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 header {
-    /* Define o fundo do cabeçalho com preto */
     background-color: #000000;
-    /* Define a cor do texto como branco */
     color: #fff;
-    /* Adiciona espaço interno superior e inferior */
-    padding: 20px 0;
-    /* Centraliza o texto dentro do cabeçalho */
+    padding: 1rem 0;
     text-align: center;
-    /* Posiciona o cabeçalho relativamente para permitir posicionamento absoluto de filhos */
     position: relative;
 }
 
 .header-content {
-    /* Define uma largura máxima para o conteúdo do cabeçalho */
     max-width: 1200px;
-    /* Centraliza o conteúdo dentro do cabeçalho */
     margin: 0 auto;
-    /* Adiciona espaço interno nas laterais */
-    padding: 0 20px;
+    padding: 0 1rem;
 }
 
 header h1 {
-    /* Define o tamanho da fonte para o título do cabeçalho */
-    font-size: 2.5rem;
-    /* Adiciona margem inferior para separar do parágrafo */
-    margin-bottom: 10px;
-    /* Torna o texto mais bold */
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
 header p {
-    /* Define o tamanho da fonte para o parágrafo do cabeçalho */
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .menu-btn {
-    /* Posiciona o botão do menu no canto superior direito do cabeçalho */
     position: absolute;
-    top: 20px;
-    right: 20px;
-    /* Define o tamanho da fonte para o ícone do menu */
+    top: 1rem;
+    right: 1rem;
     font-size: 1.5rem;
-    /* Altera o cursor para indicar que é clicável */
     cursor: pointer;
-    /* Inicialmente oculta o botão do menu */
-    display: none;
+    display: none; /* Será mostrado em telas menores */
 }
 
 nav {
-    /* Define a cor de fundo da barra de navegação */
     background-color: #444;
-    /* Adiciona espaço interno na parte superior e inferior */
-    padding: 10px 0;
-    /* Adiciona uma transição suave para mudanças */
+    padding: 0.5rem 0;
     transition: all 0.5s ease;
 }
 
 nav a {
-    /* Define a cor do texto dos links de navegação */
     color: #fff;
-    /* Remove a decoração de link sublinhado */
     text-decoration: none;
-    /* Adiciona espaço interno para os links */
-    padding: 10px 20px;
-    /* Exibe os links em linha */
+    padding: 0.5rem 1rem;
     display: inline-block;
-    /* Adiciona transição suave para mudanças de cor e fundo */
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 nav a.active, nav a:hover {
-    /* Altera o fundo para preto e a cor do texto para vermelho ao passar o mouse ou quando ativo */
     background-color: #000000;
     color: #ff1500;
 }
 
 .hero {
-    /* Usa uma imagem de fundo para a seção hero */
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    /* Define a cor do texto como branco para contraste */
     color: #fff;
-    /* Adiciona muito espaço interno para separar do conteúdo ao redor */
-    padding: 150px 20px;
-    /* Centraliza o texto */
+    padding: 4rem 1rem;
     text-align: center;
-    /* Define o hero como posicionado relativamente */
     position: relative;
 }
 
 .hero::before {
-    /* Adiciona um pseudo-elemento para criar um overlay semi-transparente */
     content: '';
     position: absolute;
     top: 0;
@@ -135,315 +118,273 @@ nav a.active, nav a:hover {
 }
 
 .hero-content {
-    /* Posiciona o conteúdo acima do overlay */
     position: relative;
     z-index: 1;
-    /* Define uma largura máxima para o conteúdo */
     max-width: 800px;
-    /* Centraliza o conteúdo */
     margin: 0 auto;
 }
 
 .hero h2 {
-    /* Define o tamanho da fonte para o título do hero */
-    font-size: 3rem;
-    /* Adiciona espaço abaixo do título */
-    margin-bottom: 20px;
-    /* Torna o texto bold */
+    font-size: 2rem;
+    margin-bottom: 1rem;
     font-weight: bold;
-    /* Adiciona sombra ao texto para legibilidade */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-    /* Define o tamanho da fonte para o parágrafo do hero */
-    font-size: 1.5rem;
-    /* Adiciona espaço abaixo do parágrafo */
-    margin-bottom: 30px;
-    /* Ajusta o espaçamento entre linhas */
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
     line-height: 1.8;
-    /* Adiciona sombra ao texto para legibilidade */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .cta-button {
-    /* Define a cor de fundo e o texto do botão de chamada para ação */
     background-color: #ff6f61;
     color: #fff;
-    /* Adiciona espaço interno ao botão */
-    padding: 15px 30px;
-    /* Remove a decoração de link */
+    padding: 0.75rem 1.5rem;
     text-decoration: none;
-    /* Arredonda as bordas do botão */
     border-radius: 5px;
-    /* Define o tamanho da fonte */
-    font-size: 1.2rem;
-    /* Torna o texto bold */
+    font-size: 1rem;
     font-weight: bold;
-    /* Adiciona transição suave para mudanças */
     transition: all 0.3s ease;
-    /* Adiciona sombra para efeito de profundidade */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button:hover {
-    /* Altera a cor de fundo ao passar o mouse */
     background-color: #ff4a3d;
-    /* Move o botão ligeiramente para cima ao passar o mouse */
     transform: translateY(-2px);
-    /* Aumenta a sombra para dar mais destaque */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 #destaques, #depoimentos {
-    /* Adiciona espaço interno e centraliza o texto para as seções de destaques e depoimentos */
-    padding: 50px 20px;
+    padding: 2rem 1rem;
     text-align: center;
 }
 
 #destaques h2, #depoimentos h2 {
-    /* Define o tamanho da fonte para os títulos das seções */
-    font-size: 2.5rem;
-    /* Adiciona espaço abaixo dos títulos */
-    margin-bottom: 40px;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .destaques-container, .depoimentos-container {
-    /* Usa flexbox para alinhar itens dentro dos containers */
     display: flex;
-    /* Distribui o espaço uniformemente entre os itens */
     justify-content: space-around;
-    /* Permite que os itens quebrem para a próxima linha se necessário */
     flex-wrap: wrap;
 }
 
 .destaque-item, .depoimento-item {
-    /* Define fundo branco para os itens de destaque e depoimentos */
     background-color: #fff;
-    /* Adiciona espaço interno */
-    padding: 20px;
-    /* Adiciona margem externa */
-    margin: 10px;
-    /* Arredonda as bordas */
+    padding: 1rem;
+    margin: 0.5rem;
     border-radius: 5px;
-    /* Adiciona sombra para efeito de profundidade */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Define a largura dos itens */
-    width: 30%;
-    /* Centraliza o texto */
+    width: calc(33.333% - 1rem);
     text-align: center;
-    /* Adiciona transição para animações */
     transition: transform 0.3s ease;
 }
 
 .destaque-item:hover {
-    /* Eleva o item ao passar o mouse */
     transform: translateY(-10px);
 }
 
 .destaque-item i {
-    /* Define o tamanho dos ícones */
-    font-size: 2.5rem;
-    /* Adiciona espaço abaixo do ícone */
-    margin-bottom: 15px;
-    /* Define a cor do ícone */
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
     color: #ff6f61;
 }
 
 .destaque-item h3 {
-    /* Define o tamanho da fonte para o título do destaque */
-    font-size: 1.5rem;
-    /* Adiciona espaço abaixo do título */
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
 .destaque-item p, .depoimento-item p {
-    /* Define o tamanho da fonte para o texto dos itens */
-    font-size: 1rem;
-    /* Define a cor do texto */
+    font-size: 0.9rem;
     color: #000000;
 }
 
 .depoimento-item {
-    /* Ajusta a largura para depoimentos */
-    width: 45%;
-    /* Alinha o texto à esquerda */
+    width: calc(50% - 1rem);
     text-align: left;
 }
 
 .depoimento-item span {
-    /* Define o depoimento do autor como um bloco */
     display: block;
-    /* Adiciona espaço acima do nome do autor */
-    margin-top: 10px;
-    /* Torna o texto bold */
+    margin-top: 0.5rem;
     font-weight: bold;
-    /* Define a cor do texto */
     color: #000000;
 }
 
 footer {
-    /* Define a cor de fundo e o texto do rodapé */
     background-color: #000000;
     color: #fff;
-    /* Adiciona espaço interno */
-    padding: 40px 20px;
-    /* Centraliza o texto */
+    padding: 2rem 1rem;
     text-align: center;
 }
 
 .footer-content {
-    /* Define a largura máxima do conteúdo do rodapé */
     max-width: 1200px;
-    /* Centraliza o conteúdo */
     margin: 0 auto;
-    /* Usa flexbox para organizar as seções do rodapé */
     display: flex;
-    /* Distribui o espaço entre as seções */
     justify-content: space-between;
-    /* Permite que as seções quebrem para a próxima linha */
     flex-wrap: wrap;
 }
 
 .footer-section {
-    /* Define a largura das seções do rodapé */
-    width: 23%;
-    /* Adiciona espaço abaixo das seções */
-    margin-bottom: 20px;
+    width: calc(25% - 1rem);
+    margin-bottom: 1rem;
 }
 
 .footer-section h3 {
-    /* Define o tamanho da fonte para os títulos do rodapé */
-    font-size: 1.5rem;
-    /* Adiciona espaço abaixo dos títulos */
-    margin-bottom: 15px;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
 }
 
 .footer-section ul {
-    /* Remove os marcadores de lista */
     list-style: none;
 }
 
 .footer-section ul li {
-    /* Adiciona espaço entre os itens da lista */
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
 .footer-section ul li a {
-    /* Define a cor do texto para os links */
     color: #fff;
-    /* Remove o sublinhado dos links */
     text-decoration: none;
-    /* Adiciona transição suave para mudanças de cor */
     transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-    /* Altera a cor do link ao passar o mouse */
     color: #ff6f61;
 }
 
 .social-links a {
-    /* Define a cor padrão dos ícones de redes sociais */
     color: #fff;
-    /* Adiciona espaço entre os ícones */
-    margin: 0 10px;
-    /* Define o tamanho dos ícones */
+    margin: 0 0.5rem;
     font-size: 1.2rem;
-    /* Adiciona transição suave para mudanças de cor */
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    /* Altera a cor dos ícones ao passar o mouse */
     color: #ff6f61;
 }
 
 .footer-bottom {
-    /* Adiciona espaço acima da linha de copyright */
-    margin-top: 20px;
-    /* Reduz o tamanho da fonte para o texto de copyright */
-    font-size: 0.9rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
 }
 
 .back-to-top {
-    /* Inicialmente esconde o botão de voltar ao topo */
     display: none;
-    /* Posiciona o botão fixamente */
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    /* Define a cor de fundo e do texto do botão */
+    bottom: 1rem;
+    right: 1rem;
     background-color: #ff6f61;
     color: #fff;
-    /* Adiciona espaço interno */
-    padding: 10px 15px;
-    /* Arredonda o botão para um círculo */
+    padding: 0.5rem;
     border-radius: 50%;
-    /* Remove o sublinhado do link */
     text-decoration: none;
-    /* Define o tamanho da fonte */
     font-size: 1.2rem;
-    /* Adiciona transição suave para mudanças de cor */
     transition: background-color 0.3s ease;
 }
 
 .back-to-top:hover {
-    /* Altera a cor de fundo ao passar o mouse */
     background-color: #ff4a3d;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .menu-btn {
-        /* Mostra o botão do menu em telas menores */
         display: block;
     }
 
     nav {
-        /* Esconde a navegação por padrão em telas menores */
         display: none;
-        /* Altera o layout da navegação para coluna */
         flex-direction: column;
-        /* Mantém a cor de fundo da navegação */
         background-color: #444;
-        /* Posiciona a navegação abaixo do cabeçalho */
         position: absolute;
         top: 100%;
         left: 0;
-        /* Estende a largura da navegação para toda a tela */
         width: 100%;
-        /* Inicialmente esconde o conteúdo da navegação */
         max-height: 0;
         overflow: hidden;
-        /* Adiciona transição para abrir/fechar a navegação */
         transition: max-height 0.5s ease;
+        z-index: 1000; /* Adicionado para colocar a navegação acima do conteúdo do hero */
     }
 
     nav.active {
-        /* Mostra a navegação quando a classe 'active' é adicionada */
         display: flex;
-        /* Ajusta a altura máxima para mostrar o menu */
         max-height: 300px;
     }
 
     .destaque-item, .depoimento-item {
-        /* Ajusta a largura para ocupar toda a largura da tela em dispositivos menores */
         width: 100%;
-        /* Remove margem lateral */
-        margin: 10px 0;
+        margin: 0.5rem 0;
     }
 
     .footer-section {
-        /* Ajusta a largura das seções do rodapé para ocupar toda a largura */
         width: 100%;
-        /* Mantém espaçamento entre seções */
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
     }
 
     header {
-        /* Altera o fundo do cabeçalho para um gradiente em telas menores */
-        background-color: #000000;
         background-image: linear-gradient(to right, #333, #555);
     }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+#galeria {
+    text-align: center;
+}
+
+.galeria-container {
+    display: flex;
+    justify-content: center;
+}
+
+.project-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    max-width: 100vw;
+    padding: 20px 0;
+}
+
+.project-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-right: 20px; /* Espaçamento entre imagens */
+    width: 80vw; /* Ajuste conforme necessário. 80% da largura da viewport para cada imagem */
+    max-width: 400px; /* Largura máxima para telas maiores */
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Para esconder a barra de rolagem em alguns navegadores */
+.project-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.project-carousel {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }

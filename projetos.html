@@ -323,11 +323,107 @@
         form button:hover {
             background-color: #005f8d;
         }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            main h2 {
+                font-size: 1.5rem;
+            }
+
+            .carousel-container {
+                height: 300px; /* Reduzir tamanho para dispositivos menores */
+            }
+
+            .project-card img {
+                height: 60%; /* Ajustar a altura da imagem para telas menores */
+            }
+
+            .project-card .details {
+                height: 40%; /* Ajustar a altura do detalhe para telas menores */
+            }
+
+            .carousel-controls {
+                bottom: 10px;
+            }
+
+            .carousel-controls button {
+                font-size: 1.5rem;
+                margin: 0 5px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+            }
+
+            .services-section {
+                padding: 10px;
+            }
+
+            .services-section h3 {
+                font-size: 1.3rem;
+            }
+
+            .services-section li {
+                font-size: 0.9rem;
+            }
+
+            .modal-content {
+                width: 90%;
+                max-width: 300px;
+                margin: 50% auto;
+            }
+
+            form label, form input, form textarea {
+                font-size: 0.9rem;
+            }
+
+            form button {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-container {
+                height: 200px; /* Ajustar ainda mais para celulares menores */
+            }
+
+            .project-card img {
+                height: 50%; /* Ajustar para telas muito pequenas */
+            }
+
+            .project-card .details {
+                height: 50%; /* Ajustar para telas muito pequenas */
+            }
+
+            .carousel-controls {
+                bottom: 5px;
+            }
+
+            .carousel-controls button {
+                font-size: 1.2rem;
+                margin: 0 3px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Projetos - Skyline Sahara</h1>
+        <h1>Projetos</h1>
         <p>Conheça nossos projetos mais recentes.</p>
     </header>
 

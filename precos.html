@@ -239,6 +239,103 @@
         form button:hover {
             background-color: #005f8d;
         }
+    /* Responsive CSS */
+    @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-bar input {
+                width: 100%;
+                margin-bottom: 1rem;
+                border-radius: 5px;
+            }
+
+            .search-bar button {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+            .products {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .product-card img {
+                height: 150px; /* Reduzir a altura da imagem para telas menores */
+            }
+
+            .product-card h3 {
+                font-size: 1rem;
+            }
+
+            .product-card p, .product-card .price {
+                font-size: 0.9rem;
+            }
+
+            .product-card .order-button {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .modal-content {
+                width: 90%;
+                max-width: 350px;
+                margin: 50% auto; /* Ajustar para centralizar melhor em telas menores */
+            }
+
+            form label, form input, form textarea {
+                font-size: 0.9rem;
+            }
+
+            form button {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .product-card img {
+                height: 120px; /* Ajustar ainda mais para telas muito pequenas */
+            }
+
+            .product-card .details {
+                padding: 0.5rem;
+            }
+
+            .product-card h3 {
+                font-size: 0.9rem;
+            }
+
+            .product-card p, .product-card .price {
+                font-size: 0.8rem;
+            }
+
+            .product-card .order-button {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+
+            .modal-content {
+                margin: 60% auto; /* Ajuste para telas muito pequenas */
+            }
+        }
     </style>
 </head>
 <body>

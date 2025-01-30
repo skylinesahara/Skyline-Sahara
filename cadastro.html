@@ -14,6 +14,30 @@
             background-position: center;
             backdrop-filter: blur(6px);
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            body {
+                background-attachment: scroll; /* Para telas menores, evita problemas de performance com background fixo */
+            }
+
+            .bg-white {
+                padding: 1rem; /* Redução do padding para telas menores */
+            }
+
+            .text-3xl {
+                font-size: 1.75rem; /* Ajuste do tamanho da fonte para melhorar a legibilidade */
+            }
+
+            .text-lg {
+                font-size: 1rem; /* Ajuste do tamanho da fonte do botão */
+            }
+
+            .w-20 {
+                width: 15%; /* Reduzir o tamanho do logo para telas menores */
+                height: auto; /* Mantém a proporção */
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-900 bg-opacity-60 flex items-center justify-center min-h-screen">

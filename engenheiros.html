@@ -246,6 +246,110 @@
         form button:hover {
             background-color: #005f8d;
         }
+    /* Responsive CSS */
+    @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-bar input {
+                width: 100%;
+                margin-bottom: 1rem;
+                border-radius: 5px;
+            }
+
+            .search-bar button {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+            .engineers-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .engineer-card img {
+                height: 200px; /* Ajustar altura para telas menores */
+            }
+
+            .engineer-card h3 {
+                font-size: 1rem;
+            }
+
+            .engineer-card p {
+                font-size: 0.9rem;
+            }
+
+            .contact-button, .see-more-button, .cta-button {
+                font-size: 0.9rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .modal-content {
+                width: 90%;
+                max-width: 350px;
+                margin: 50% auto; /* Ajustar para centralizar melhor em telas menores */
+            }
+
+            form label, form input, form textarea {
+                font-size: 0.9rem;
+            }
+
+            form button {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .engineers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .engineer-card img {
+                height: 150px; /* Ajustar ainda mais para telas muito pequenas */
+            }
+
+            .engineer-card .details {
+                padding: 0.5rem;
+            }
+
+            .engineer-card h3 {
+                font-size: 0.9rem;
+            }
+
+            .engineer-card p {
+                font-size: 0.8rem;
+            }
+
+            .contact-button, .see-more-button, .cta-button {
+                font-size: 0.8rem;
+                padding: 0.2rem 0.5rem;
+            }
+
+            .modal-content {
+                margin: 60% auto; /* Ajuste para telas muito pequenas */
+            }
+
+            .cta-button {
+                margin-top: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
