@@ -107,18 +107,6 @@
                 <p>Excelência em Engenharia Civil. Soluções completas para sua obra.</p>
             </div>
             <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="precos.html">Preços</a></li>
-                    <li><a href="engenheiros.html">Engenheiros</a></li>
-                    <li><a href="alugar.html">Alugar</a></li>
-                    <li><a href="orcamento.html">Orçamento</a></li>
-                    <li><a href="projetos.html">Projetos</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
                 <h3>Contato</h3>
                 <p>Email: contato@skylinesahara.com</p>
                 <p>Telefone: (+258) 83304-3525</p>
@@ -144,16 +132,6 @@
             const navMenu = document.getElementById('nav-menu');
             navMenu.classList.toggle('active');
         }
-
-        // Botão "Voltar ao topo"
-        const backToTopButton = document.querySelector('.back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
 
         // Lightbox para a galeria de projetos
         lightbox.option({
@@ -199,13 +177,6 @@
             autoplaySpeed: 5000
         });
 
-        // Validação do formulário de contato
-        document.getElementById('form-contato').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Mensagem enviada com sucesso!');
-            this.reset();
-        });
-        
     </script>
 </body>
 </html>
