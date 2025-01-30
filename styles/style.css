@@ -13,11 +13,11 @@ body {
     line-height: 1.6;
     color: #000000;
     background-color: #f4f4f4;
-    background-image: url('../imagens/fundo.png'); /* Caminho relativo correto */
+    background-image: url('../imagens/fundo.png'); /* Change to relative path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative; /* Adicionado para o pseudo-elemento */
+    position: relative;
 }
 body::before {
     content: "";
