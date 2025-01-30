@@ -18,6 +18,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    transition: background-color 0.5s ease; /* Suave transição de fundo */
 }
 
 body::before {
@@ -33,7 +34,7 @@ body::before {
     background-repeat: no-repeat;
     filter: blur(5px); /* Ajuste o valor para o desfoque desejado */
     z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo */
-    opacity: 1; /* Ajuste a opacidade para controlar a intensidade do desfoque */
+    opacity: 0.8; /* Diminuir um pouco a opacidade para clareza */
 }
 
 /* Layout básico usando Flexbox */
@@ -68,6 +69,7 @@ header h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Melhorar legibilidade */
 }
 
 header p {
@@ -117,7 +119,7 @@ nav a.active, nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); /* Gradient overlay for better text legibility */
 }
 
 .hero-content {
@@ -168,6 +170,7 @@ nav a.active, nav a:hover {
 #destaques h2, #depoimentos h2 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
+    color: #333; /* Cor de texto um pouco mais suave */
 }
 
 .destaques-container, .depoimentos-container {
@@ -383,6 +386,11 @@ footer {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Adiciona uma transição suave para o efeito de escala */
+}
+
+.responsive-img:hover {
+    transform: scale(1.05); /* Efeito de escala ao passar o mouse */
 }
 
 /* Para esconder a barra de rolagem em alguns navegadores */
