@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preços - Skyline Sahara</title>
-    <link rel="icon" href="D:/TODAS PASTAS/skylinesahara site 2/imagens/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -170,8 +170,9 @@
                 transform: translateY(0);
             }
         }
-    /* Modal Styles */
-    .modal {
+
+        /* Modal Styles */
+        .modal {
             display: none;
             position: fixed;
             z-index: 1;
@@ -256,7 +257,7 @@
         <!-- Lista de Produtos -->
         <div class="products">
             <div class="product-card">
-                <img src="D:/TODAS PASTAS/skylinesahara site 2/imagens/CIMENTO.PNG" alt="Cimento">
+                <img src="./imagens/produtos/CIMENTO.PNG" alt="Cimento">
                 <div class="details">
                     <h3>Cimento 50kg</h3>
                     <p>Alta qualidade para suas construções</p>
@@ -266,7 +267,7 @@
             </div>
         
             <div class="product-card">
-                <img src="D:/TODAS PASTAS/skylinesahara site 2/imagens/BLOCOS.PNG" alt="Blocos">
+                <img src="./imagens/produtos/BLOCOS.PNG" alt="Blocos">
                 <div class="details">
                     <h3>Blocos de Concreto</h3>
                     <p>Resistência e durabilidade</p>
@@ -276,7 +277,7 @@
             </div>
         
             <div class="product-card">
-                <img src="D:/TODAS PASTAS/skylinesahara site 2/imagens/AREIAGROSSA.PNG" alt="Areia">
+                <img src="./imagens/produtos/AREIAGROSSA.PNG" alt="Areia">
                 <div class="details">
                     <h3>Areia Grossa (m³)</h3>
                     <p>Ideal para fundações</p>
@@ -286,7 +287,7 @@
             </div>
         
             <div class="product-card">
-                <img src="D:/TODAS PASTAS/skylinesahara site 2/imagens/TIJOLO.PNG" alt="Tijolos">
+                <img src="./imagens/produtos/TIJOLO.PNG" alt="Tijolos">
                 <div class="details">
                     <h3>Tijolos Cerâmicos</h3>
                     <p>Excelência para suas paredes</p>
@@ -296,7 +297,7 @@
             </div>
         
             <div class="product-card">
-                <img src="D:/TODAS PASTAS/skylinesahara site 2/imagens/ACOS.PNG" alt="Ferro">
+                <img src="./imagens/produtos/ACOS.PNG" alt="Ferro">
                 <div class="details">
                     <h3>Ferro para Construção</h3>
                     <p>10mm x 12m</p>
@@ -306,7 +307,7 @@
             </div>
 
             <div class="product-card">
-                <img src="D:/TODAS PASTAS/skylinesahara site 2/imagens/brita.png" alt="Pedra">
+                <img src="./imagens/produtos/brita.png" alt="Pedra">
                 <div class="details">
                     <h3>Pedra Britada</h3>
                     <p>Utilizada em fundações e pavimentação</p>
@@ -316,7 +317,7 @@
             </div>
 
             <div class="product-card">
-                <img src="D:/TODAS PASTAS/skylinesahara site 2/imagens/barrotes.png" alt="Barrotes">
+                <img src="./imagens/produtos/barrotes.png" alt="Barrotes">
                 <div class="details">
                     <h3>Barrotes de Madeira</h3>
                     <p>Ideal para estruturas de telhado</p>
@@ -326,7 +327,7 @@
             </div>
 
             <div class="product-card">
-                <img src="D:/TODAS PASTAS/skylinesahara site 2/imagens/chapas.png" alt="Chapas">
+                <img src="./imagens/produtos/chapas.png" alt="Chapas">
                 <div class="details">
                     <h3>Chapas de Aço</h3>
                     <p>Duráveis e resistentes para construção</p>
@@ -340,7 +341,7 @@
     <!-- Modal for Order -->
     <div id="orderModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
+            <span class="close" onclick="closeModal()">×</span>
             <h2>Fazer Pedido</h2>
             <form id="orderForm">
                 <input type="hidden" id="productName" name="productName">
