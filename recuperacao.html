@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperação de Senha</title>
-    <link rel="icon" href="D:/TODAS PASTAS/skylinesahara site 2/imagens/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./imagens/favicon.ico" type="image/x-icon"> <!-- Caminho relativo para o ícone -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
@@ -14,44 +14,74 @@
             backdrop-filter: blur(6px);
         }
 
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-container:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .gradient-button {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            transition: all 0.3s ease;
+        }
+
+        .gradient-button:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gradient-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
         /* Responsive adjustments */
         @media (max-width: 640px) {
             body {
-                background-attachment: scroll; /* Para telas menores, evita problemas de performance com background fixo */
+                background-attachment: scroll;
             }
 
-            .bg-white {
-                padding: 1rem; /* Redução do padding para telas menores */
+            .form-container {
+                padding: 1.5rem;
+                margin: 1rem;
             }
 
             .text-2xl {
-                font-size: 1.5rem; /* Ajuste do tamanho da fonte para melhorar a legibilidade */
+                font-size: 1.5rem;
             }
 
             .text-lg {
-                font-size: 1rem; /* Ajuste do tamanho da fonte do botão */
+                font-size: 1rem;
             }
 
             .w-16 {
-                width: 12%; /* Reduzir o tamanho do logo para telas menores */
-                height: auto; /* Mantém a proporção */
+                width: 12%;
+                height: auto;
             }
         }
     </style>
 </head>
-<body class="bg-gray-900 bg-opacity-60 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-md">
+<body class="flex items-center justify-center min-h-screen">
+    <div class="form-container p-8 w-full max-w-md">
         <div class="text-center">
-            <img src="D:\TODAS PASTAS\skylinesahara site 2\imagens\logos\logo.png" alt="Logo" class="mx-auto mb-4 w-16 h-16">
+            <!-- Caminho relativo para a imagem do logo -->
+            <img src="./imagens/logo.png" alt="Logo" class="mx-auto mb-4 w-16 h-16">
             <h1 class="text-2xl font-extrabold text-indigo-800">Recuperação de Senha</h1>
             <p class="text-sm text-gray-600 mt-2">Insira seu email para receber instruções de recuperação</p>
         </div>
         <form action="/recuperar-senha" method="POST" class="space-y-6 mt-6">
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Digite seu email" required>
+                <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200" placeholder="Digite seu email" required>
             </div>
-            <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-blue-500 text-white py-3 px-4 rounded-md hover:from-indigo-700 hover:to-blue-600 transition text-lg font-semibold shadow-lg">Enviar</button>
+            <button type="submit" class="w-full gradient-button text-white py-3 px-4 rounded-lg text-lg font-semibold shadow-lg">Enviar</button>
         </form>
         <p class="text-sm text-center text-gray-600 mt-6">Lembrou sua senha? <a href="login.html" class="text-indigo-600 hover:underline">Faça login</a></p>
         <p class="text-xs text-center text-gray-500 mt-4">Ainda não possui uma conta? <a href="cadastro.html" class="text-indigo-600 hover:underline">Cadastre-se</a></p>
