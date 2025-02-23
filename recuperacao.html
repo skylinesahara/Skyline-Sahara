@@ -3,88 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperação de Senha</title>
-    <link rel="icon" href="./imagens/favicon.ico" type="image/x-icon"> <!-- Caminho relativo para o ícone -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-image: url('assets/background-recovery.jpg');
-            background-size: cover;
-            background-position: center;
-            backdrop-filter: blur(6px);
-        }
-
-        .form-container {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .form-container:hover {
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .gradient-button {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            transition: all 0.3s ease;
-        }
-
-        .gradient-button:hover {
-            background: linear-gradient(135deg, #2575fc, #6a11cb);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .gradient-button:active {
-            transform: translateY(0);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 640px) {
-            body {
-                background-attachment: scroll;
-            }
-
-            .form-container {
-                padding: 1.5rem;
-                margin: 1rem;
-            }
-
-            .text-2xl {
-                font-size: 1.5rem;
-            }
-
-            .text-lg {
-                font-size: 1rem;
-            }
-
-            .w-16 {
-                width: 12%;
-                height: auto;
-            }
-        }
-    </style>
+    <meta name="description" content="Recupere sua senha da Skyline Sahara para continuar acessando ferramentas exclusivas.">
+    <meta name="keywords" content="recuperação de senha, skyline sahara, engenheiros, engenharia civil">
+    <title>Recuperação de Senha - Skyline Sahara</title>
+    <link rel="icon" href="./imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-<body class="flex items-center justify-center min-h-screen">
-    <div class="form-container p-8 w-full max-w-md">
-        <div class="text-center">
-            <!-- Caminho relativo para a imagem do logo -->
-            <img src="./imagens/logo.png" alt="Logo" class="mx-auto mb-4 w-16 h-16">
-            <h1 class="text-2xl font-extrabold text-indigo-800">Recuperação de Senha</h1>
-            <p class="text-sm text-gray-600 mt-2">Insira seu email para receber instruções de recuperação</p>
-        </div>
-        <form action="/recuperar-senha" method="POST" class="space-y-6 mt-6">
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200" placeholder="Digite seu email" required>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><h1>Skyline Sahara</h1></a>
+                <p class="tagline">Engenharia Civil Moderna</p>
             </div>
-            <button type="submit" class="w-full gradient-button text-white py-3 px-4 rounded-lg text-lg font-semibold shadow-lg">Enviar</button>
-        </form>
-        <p class="text-sm text-center text-gray-600 mt-6">Lembrou sua senha? <a href="login.html" class="text-indigo-600 hover:underline">Faça login</a></p>
-        <p class="text-xs text-center text-gray-500 mt-4">Ainda não possui uma conta? <a href="cadastro.html" class="text-indigo-600 hover:underline">Cadastre-se</a></p>
-    </div>
+            <nav class="nav-menu">
+                <button class="menu-btn" aria-label="Abrir menu" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="precos.html">Preços</a></li>
+                    <li><a href="engenheiros.html">Engenheiros</a></li>
+                    <li><a href="alugar.html">Alugar</a></li>
+                    <li><a href="orcamento.html">Orçamento</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="download.html">Downloads</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1>Recuperação de Senha</h1>
+            <p>Recupere o acesso à sua conta com facilidade.</p>
+        </div>
+    </section>
+
+    <!-- Recovery Section -->
+    <section class="recovery-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <img src="./imagens/logo.png" alt="Logo Skyline Sahara" class="logo-img">
+                    <h2>Recuperar Senha</h2>
+                    <p>Insira seu email para receber instruções de recuperação.</p>
+                </div>
+                <form action="/recuperar-senha" method="POST" id="recoveryForm" class="form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                    </div>
+                    <button type="submit" class="cta-button primary">Enviar</button>
+                </form>
+                <div class="form-footer">
+                    <p>Lembrou sua senha? <a href="login.html">Faça login</a></p>
+                    <p>Ainda não possui uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Skyline Sahara</h3>
+                <p>Inovação e excelência em engenharia civil.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:contato@skylinesahara.com">contato@skylinesahara.com</a></p>
+                <p><i class="fas fa-phone"></i> (+258) 83304-3525</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Skyline Sahara. Todos os direitos reservados.</p>
+            <a href="#top" class="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.getElementById('recoveryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Instruções de recuperação foram enviadas para seu email!');
+            // Aqui você pode redirecionar ou integrar com um backend
+            // Por exemplo: window.location.href = '/login.html';
+        });
+    </script>
 </body>
 </html>
