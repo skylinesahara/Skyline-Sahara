@@ -385,3 +385,239 @@ footer {
         font-size: 28px;
     }
 }
+
+
+
+
+
+/* Engineers Section */
+.engineers-section {
+    padding: 80px 0;
+    background: #f9f9f9;
+}
+
+.search-bar {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto 48px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar button {
+    background: #0078d4;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: #005ea2;
+}
+
+.engineers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.engineer-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.engineer-card:hover {
+    transform: translateY(-8px);
+}
+
+.engineer-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.engineer-card .details {
+    padding: 24px;
+}
+
+.engineer-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0d47a1;
+    margin-bottom: 12px;
+}
+
+.engineer-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.specialty-icon {
+    margin-right: 8px;
+    color: #0078d4;
+}
+
+.contact-button {
+    display: block;
+    background: #0078d4;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-top: 16px;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #005ea2;
+    transform: translateY(-2px);
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 48px;
+}
+
+.see-more-button {
+    background: transparent;
+    color: #0078d4;
+    border: 2px solid #0078d4;
+}
+
+.see-more-button:hover {
+    background: rgba(0, 120, 212, 0.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 32px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #1f2a44;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2a44;
+    margin-bottom: 8px;
+    display: block;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #0078d4;
+}
+
+form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .engineers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .engineer-card img {
+        height: 200px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .engineers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .engineer-card img {
+        height: 180px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .search-bar input, .search-bar button {
+        width: 100%;
+    }
+
+    .modal-content {
+        margin: 20% auto;
+        padding: 24px;
+    }
+}
