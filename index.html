@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Skyline Sahara - Soluções profissionais em engenharia civil, construção, aluguel de equipamentos e consultoria.">
+    <meta name="description" content="Skyline Sahara - Soluções inovadoras em engenharia civil, construção, aluguel de equipamentos e consultoria.">
     <meta name="keywords" content="engenharia civil, construção, aluguel de equipamentos, consultoria, projetos personalizados">
     <meta name="author" content="Skyline Sahara">
     <title>Skyline Sahara - Engenharia Civil</title>
@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header>
         <div class="container header-content">
             <div class="logo">
-                <h1>Skyline Sahara</h1>
-                <p class="tagline">Excelência em Engenharia Civil</p>
+                <a href="index.html"><h1>Skyline Sahara</h1></a>
+                <p class="tagline">Engenharia Civil Moderna</p>
             </div>
-            <nav class="nav-menu" id="nav-menu">
+            <nav class="nav-menu">
                 <button class="menu-btn" aria-label="Abrir menu" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -34,101 +35,103 @@
                     <li><a href="alugar.html">Alugar</a></li>
                     <li><a href="orcamento.html">Orçamento</a></li>
                     <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="download.html">Downloads</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="container hero-content animate__animated animate__fadeIn">
-                <h2>Soluções completas para sua obra</h2>
-                <p>Desde o projeto até a execução, entregamos qualidade e inovação.</p>
-                <a href="download.html" class="cta-button">Baixar SKY</a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content animate__animated animate__fadeIn">
+            <h1>Inovação em Engenharia Civil</h1>
+            <p>Soluções completas desde o projeto até a execução, com tecnologia de ponta e expertise incomparável.</p>
+            <div class="hero-actions">
+                <a href="download.html" class="cta-button primary">Baixar SKY</a>
+                <a href="orcamento.html" class="cta-button secondary">Solicitar Orçamento</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Destaques Section -->
-        <section id="destaques" class="section">
-            <div class="container">
-                <h2 class="section-title">Nossos Destaques</h2>
-                <div class="destaques-carousel">
-                    <div class="destaque-item">
-                        <i class="fas fa-building fa-3x"></i>
-                        <h3>Projetos Personalizados</h3>
-                        <p>Soluções sob medida para atender às suas necessidades únicas.</p>
-                    </div>
-                    <div class="destaque-item">
-                        <i class="fas fa-tools fa-3x"></i>
-                        <h3>Equipamentos Modernos</h3>
-                        <p>Aluguel de máquinas de última geração para sua obra.</p>
-                    </div>
-                    <div class="destaque-item">
-                        <i class="fas fa-users fa-3x"></i>
-                        <h3>Equipe Qualificada</h3>
-                        <p>Engenheiros experientes e altamente capacitados.</p>
-                    </div>
-                    <div class="destaque-item">
-                        <i class="fas fa-chart-line fa-3x"></i>
-                        <h3>Consultoria Especializada</h3>
-                        <p>Otimização de projetos e redução de custos.</p>
-                    </div>
+    <!-- Destaques Section -->
+    <section id="destaques" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Por que Escolher a Skyline Sahara?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-building fa-3x"></i>
+                    <h3>Projetos Personalizados</h3>
+                    <p>Soluções sob medida que atendem às suas necessidades específicas.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-tools fa-3x"></i>
+                    <h3>Equipamentos Avançados</h3>
+                    <p>Aluguel de máquinas modernas para máxima eficiência.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users fa-3x"></i>
+                    <h3>Equipe Especializada</h3>
+                    <p>Engenheiros experientes prontos para transformar sua visão em realidade.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-line fa-3x"></i>
+                    <h3>Consultoria Estratégica</h3>
+                    <p>Otimização de projetos com foco em custo e desempenho.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Galeria Section -->
-        <section id="galeria" class="section">
-            <div class="container">
-                <h2 class="section-title">Galeria de Projetos</h2>
-                <div class="project-carousel">
-                    <a href="./imagens/projetoA.jpg" data-lightbox="galeria" data-title="Projeto 1">
-                        <img src="./imagens/projetoA.jpg" alt="Projeto 1" class="responsive-img">
-                    </a>
-                    <a href="./imagens/projetoB.jpg" data-lightbox="galeria" data-title="Projeto 2">
-                        <img src="./imagens/projetoB.jpg" alt="Projeto 2" class="responsive-img">
-                    </a>
-                    <a href="./imagens/projetoC.jpg" data-lightbox="galeria" data-title="Projeto 3">
-                        <img src="./imagens/projetoC.jpg" alt="Projeto 3" class="responsive-img">
-                    </a>
+    <!-- Galeria Section -->
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Projetos</h2>
+            <div class="project-carousel">
+                <a href="./imagens/projetoA.jpg" data-lightbox="galeria" data-title="Projeto Residencial">
+                    <img src="./imagens/projetoA.jpg" alt="Projeto Residencial" class="project-img">
+                </a>
+                <a href="./imagens/projetoB.jpg" data-lightbox="galeria" data-title="Projeto Comercial">
+                    <img src="./imagens/projetoB.jpg" alt="Projeto Comercial" class="project-img">
+                </a>
+                <a href="./imagens/projetoC.jpg" data-lightbox="galeria" data-title="Projeto Industrial">
+                    <img src="./imagens/projetoC.jpg" alt="Projeto Industrial" class="project-img">
+                </a>
+            </div>
+            <a href="projetos.html" class="cta-button secondary">Ver Todos os Projetos</a>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Depoimentos</h2>
+            <div class="depoimentos-carousel">
+                <div class="testimonial-item">
+                    <p>"A Skyline Sahara entregou um projeto excepcional, com qualidade e prazos impecáveis."</p>
+                    <span>João Silva, CEO - Construtora Silva</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Equipamentos de ponta e suporte técnico excelente. Parceiros indispensáveis!"</p>
+                    <span>Maria Souza, Engenheira Chefe</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"A consultoria reduziu nossos custos em 20%. Resultados impressionantes!"</p>
+                    <span>Carlos Oliveira, Diretor de Projetos</span>
                 </div>
             </div>
-        </section>
-
-        <!-- Depoimentos Section -->
-        <section id="depoimentos" class="section">
-            <div class="container">
-                <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
-                <div class="depoimentos-carousel">
-                    <div class="depoimento-item">
-                        <p>"Projeto incrível e profissionais qualificados. Superaram nossas expectativas!"</p>
-                        <span>- João Silva</span>
-                    </div>
-                    <div class="depoimento-item">
-                        <p>"Equipamentos modernos e atendimento impecável. Recomendo fortemente!"</p>
-                        <span>- Maria Souza</span>
-                    </div>
-                    <div class="depoimento-item">
-                        <p>"Consultoria que reduziu custos e otimizou nosso projeto. Excelente!"</p>
-                        <span>- Carlos Oliveira</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container footer-content">
             <div class="footer-section">
                 <h3>Skyline Sahara</h3>
-                <p>Soluções completas em engenharia civil para sua obra.</p>
+                <p>Inovação e excelência em engenharia civil.</p>
             </div>
             <div class="footer-section">
                 <h3>Contato</h3>
-                <p><i class="fas fa-envelope"></i> contato@skylinesahara.com</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:contato@skylinesahara.com">contato@skylinesahara.com</a></p>
                 <p><i class="fas fa-phone"></i> (+258) 83304-3525</p>
             </div>
             <div class="footer-section">
@@ -152,13 +155,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <script>
-        // Toggle Menu
         function toggleMenu() {
-            const nav = document.querySelector('.nav-links');
-            nav.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
         }
 
-        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -168,8 +168,20 @@
             });
         });
 
-        // Slick Carousel Config
-        $('.destaques-carousel').slick({
+        $('.features-grid').slick({
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                { breakpoint: 768, settings: { slidesToShow: 2 } },
+                { breakpoint: 480, settings: { slidesToShow: 1 } }
+            ]
+        });
+
+        $('.project-carousel').slick({
             dots: true,
             infinite: true,
             speed: 500,
@@ -181,17 +193,6 @@
             ]
         });
 
-        $('.project-carousel').slick({
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            responsive: [
-                { breakpoint: 768, settings: { slidesToShow: 1 } }
-            ]
-        });
-
         $('.depoimentos-carousel').slick({
             dots: true,
             infinite: true,
@@ -199,10 +200,9 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 4000
+            autoplaySpeed: 5000
         });
 
-        // Lightbox Config
         lightbox.option({
             resizeDuration: 200,
             wrapAround: true,
