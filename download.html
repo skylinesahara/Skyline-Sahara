@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora SkY - Ferramenta de Cálculos de Engenharia</title>
+    <meta name="description" content="Downloads Skyline Sahara - Baixe softwares, planilhas estruturais e modelos de plantas para engenharia civil.">
+    <meta name="keywords" content="downloads skyline sahara, software sky, planilhas estruturais, modelos dwg">
+    <title>Downloads - Skyline Sahara</title>
+    <link rel="icon" href="./imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset básico */
+        /* Reset e Estilos Gerais */
         * {
             margin: 0;
             padding: 0;
@@ -13,319 +18,379 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
             line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            color: #fff;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
         }
 
-        /* Animação de fundo */
-        @keyframes moveBackground {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
         }
 
-        body::before {
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: #ffd700;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Section */
+        .main-section {
+            padding: 5rem 0;
+            text-align: center;
+            background: url('../imagens/hero-bg.jpg') no-repeat center/cover;
+            position: relative;
+            color: #fff;
+        }
+
+        .main-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
-            z-index: -1;
-            animation: moveBackground 10s infinite alternate;
+            background: rgba(0, 0, 0, 0.5);
         }
 
-        /* Cabeçalho */
-        header {
-            text-align: center;
-            margin-bottom: 2rem;
-            animation: fadeIn 1s ease-in-out;
+        .main-content {
+            position: relative;
+            z-index: 1;
         }
 
-        header h1 {
+        .main-content h2 {
             font-size: 3rem;
-            margin-bottom: 0.5rem;
             font-weight: 700;
-            background: linear-gradient(45deg, #ff6f61, #ffcc00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
         }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Navegação por abas */
-        .tab-navigation {
-            display: flex;
-            justify-content: center;
+        .main-content p {
+            font-size: 1.3rem;
             margin-bottom: 2rem;
-            gap: 1rem;
-            flex-wrap: wrap;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .tab-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        /* Downloads Section */
+        .downloads-section {
+            padding: 5rem 0;
+            background: #fff;
         }
 
-        .tab-btn.active {
-            background-color: #ff6f61;
-            border-color: #ff6f61;
-        }
-
-        .tab-btn:hover {
-            background-color: rgba(255, 111, 97, 0.8);
-            transform: translateY(-3px);
-        }
-
-        /* Conteúdo das abas */
-        .tab-content {
-            display: none;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            max-width: 900px;
-            width: 90%;
+        .downloads-section h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0d47a1;
             text-align: center;
-            margin-bottom: 2rem;
-            animation: fadeIn 1.5s ease-in-out;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 3rem;
         }
 
-        .tab-content.active {
-            display: block;
+        .download-category {
+            margin-bottom: 4rem;
         }
 
-        .tab-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
+        .download-category h4 {
+            font-size: 1.8rem;
             font-weight: 600;
-            background: linear-gradient(45deg, #ff6f61, #ffcc00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #1a73e8;
+            margin-bottom: 1.5rem;
         }
 
-        .tab-content p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #ff6f61;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 2px solid transparent;
-        }
-
-        .download-btn:hover {
-            background-color: #ff4a3d;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .download-btn:active {
-            transform: translateY(0);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .download-btn i {
-            margin-right: 8px;
-            font-size: 1.2rem;
-        }
-
-        /* Lista de arquivos para download */
         .file-list {
+            display: grid;
+            gap: 1rem;
             text-align: left;
-            margin-top: 1.5rem;
         }
 
         .file-list a {
-            display: block;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
+            display: flex;
+            align-items: center;
+            background: #f8f8f8;
+            padding: 15px 20px;
             border-radius: 10px;
-            color: #fff;
+            color: #333;
             text-decoration: none;
-            margin-bottom: 10px;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid #ddd;
+            font-weight: 500;
         }
 
         .file-list a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateX(10px);
+            background: #1a73e8;
+            color: #fff;
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        /* Rodapé */
+        .file-list a i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+            color: #1a73e8;
+        }
+
+        .file-list a:hover i {
+            color: #fff;
+        }
+
+        /* Footer */
         footer {
-            margin-top: 3rem;
+            background: #0d47a1;
+            color: #fff;
+            padding: 2rem 0;
             text-align: center;
+            margin-top: auto;
+        }
+
+        footer p {
             font-size: 0.9rem;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         footer a {
-            color: #ff6f61;
+            color: #ffd700;
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         footer a:hover {
-            opacity: 0.7;
+            color: #ffca28;
+        }
+
+        footer i {
+            color: #ffd700;
+            margin: 0 5px;
         }
 
         /* Animações */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .download-category {
+            animation: fadeIn 0.8s ease-in-out;
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
-            header h1 {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #0d47a1;
+                width: 200px;
+                padding: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+            }
+
+            .main-content h2 {
                 font-size: 2.5rem;
             }
 
-            .tab-content h2 {
+            .main-content p {
+                font-size: 1.1rem;
+            }
+
+            .downloads-section {
+                padding: 3rem 0;
+            }
+
+            .downloads-section h3 {
                 font-size: 2rem;
             }
 
-            .tab-btn {
-                font-size: 0.9rem;
-                padding: 10px 20px;
+            .download-category h4 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 2rem;
             }
 
-            .tab-content {
-                padding: 1.5rem;
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .main-content h2 {
+                font-size: 2rem;
+            }
+
+            .main-content p {
+                font-size: 1rem;
+            }
+
+            .file-list a {
+                padding: 12px 15px;
+                font-size: 0.9rem;
             }
         }
     </style>
-    <!-- Ícones do FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Fonte Poppins do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Cabeçalho -->
+    <!-- Header -->
     <header>
-        <h1>Calculadora SkY</h1>
-        <p>Sua ferramenta completa para cálculos de engenharia</p>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>Skyline Sahara</h1>
+                <p class="tagline">Downloads</p>
+            </div>
+            <nav>
+                <button class="menu-btn" aria-label="Abrir menu" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="precos.html">Preços</a></li>
+                    <li><a href="engenheiros.html">Engenheiros</a></li>
+                    <li><a href="alugar.html">Alugar</a></li>
+                    <li><a href="orcamento.html">Orçamento</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="#" class="active">Downloads</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Navegação por abas -->
-    <div class="tab-navigation">
-        <button class="tab-btn active" data-tab="download">Baixar</button>
-        <button class="tab-btn" data-tab="updates">Atualizações Antigas</button>
-        <button class="tab-btn" data-tab="spreadsheets">Planilhas Estruturais</button>
-        <button class="tab-btn" data-tab="templates">Modelos de Plantas</button>
-    </div>
-
-    <!-- Conteúdo das abas -->
-    <div class="tab-content active" id="download">
-        <h2>Baixe a Versão Mais Recente</h2>
-        <p>Obtenha a última versão do nosso programa SkY para realizar seus cálculos de engenharia com facilidade e precisão.</p>
-        <a href="" class="download-btn" download="SKY.exe">
-            <i class="fas fa-download"></i> Baixar Agora
-        </a>
-    </div>
-
-    <div class="tab-content" id="updates">
-        <h2>Atualizações Antigas</h2>
-        <p>Selecione uma versão anterior para download:</p>
-        <div class="file-list">
-            <a href="sky_v1.0.exe" download>Versão 1.0</a>
-            <a href="sky_v1.1.exe" download>Versão 1.1</a>
-            <a href="sky_v1.2.exe" download>Versão 1.2</a>
+    <!-- Main Section -->
+    <section class="main-section">
+        <div class="container main-content">
+            <h2>Downloads Skyline Sahara</h2>
+            <p>Acesse nossos softwares, planilhas estruturais e modelos de plantas para otimizar seus projetos de engenharia civil.</p>
         </div>
-    </div>
+    </section>
 
-    <div class="tab-content" id="spreadsheets">
-        <h2>Planilhas de Cálculos Estruturais</h2>
-        <p>Baixe planilhas prontas para cálculos estruturais:</p>
-        <div class="file-list">
-            <a href="planilha_vigas.xlsx" download>Planilha de Cálculo de Vigas</a>
-            <a href="planilha_lajes.xlsx" download>Planilha de Cálculo de Lajes</a>
-            <a href="planilha_pilares.xlsx" download>Planilha de Cálculo de Pilares</a>
+    <!-- Downloads Section -->
+    <section class="downloads-section">
+        <div class="container">
+            <h3>Recursos Disponíveis</h3>
+
+            <div class="download-category">
+                <h4>Software SKY</h4>
+                <div class="file-list">
+                    <a href="sky_latest.exe" download><i class="fas fa-download"></i> SKY - Versão Mais Recente</a>
+                    <a href="sky_v1.0.exe" download><i class="fas fa-file-download"></i> SKY - Versão 1.0</a>
+                    <a href="sky_v1.1.exe" download><i class="fas fa-file-download"></i> SKY - Versão 1.1</a>
+                    <a href="sky_v1.2.exe" download><i class="fas fa-file-download"></i> SKY - Versão 1.2</a>
+                </div>
+            </div>
+
+            <div class="download-category">
+                <h4>Planilhas Estruturais</h4>
+                <div class="file-list">
+                    <a href="planilha_vigas.xlsx" download><i class="fas fa-table"></i> Cálculo de Vigas</a>
+                    <a href="planilha_lajes.xlsx" download><i class="fas fa-table"></i> Cálculo de Lajes</a>
+                    <a href="planilha_pilares.xlsx" download><i class="fas fa-table"></i> Cálculo de Pilares</a>
+                </div>
+            </div>
+
+            <div class="download-category">
+                <h4>Modelos de Plantas</h4>
+                <div class="file-list">
+                    <a href="planta_residencial.dwg" download><i class="fas fa-drafting-compass"></i> Planta Residencial</a>
+                    <a href="planta_comercial.dwg" download><i class="fas fa-drafting-compass"></i> Planta Comercial</a>
+                    <a href="planta_industrial.dwg" download><i class="fas fa-drafting-compass"></i> Planta Industrial</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="tab-content" id="templates">
-        <h2>Modelos de Plantas</h2>
-        <p>Baixe modelos de plantas prontos para uso:</p>
-        <div class="file-list">
-            <a href="planta_residencial.dwg" download>Planta Residencial (DWG)</a>
-            <a href="planta_comercial.dwg" download>Planta Comercial (DWG)</a>
-            <a href="planta_industrial.dwg" download>Planta Industrial (DWG)</a>
-        </div>
-    </div>
-
-    <!-- Rodapé -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Calculadora SkY. Desenvolvido com <i class="fas fa-heart"></i> por <a href="#" target="_blank">Sua Empresa</a>.</p>
+        <div class="container">
+            <p>© 2025 Skyline Sahara. Desenvolvido com <i class="fas fa-heart"></i> para <a href="index.html">Skyline Sahara</a>.</p>
+        </div>
     </footer>
 
-    <!-- Script para alternar abas -->
+    <!-- Scripts -->
     <script>
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
+        }
 
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove a classe 'active' de todos os botões e conteúdos
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-
-                // Adiciona a classe 'active' ao botão clicado e ao conteúdo correspondente
-                button.classList.add('active');
-                const tabId = button.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
